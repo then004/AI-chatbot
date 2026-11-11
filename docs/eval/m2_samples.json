@@ -1,0 +1,110 @@
+[
+  {
+    "sample_id": "m2-01",
+    "question": "What does the corpus say about writing a business plan?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 0,
+    "text": "Design by www.jebensdesign.co.uk\nwith Great Advice from Seasoned Practitioners The Entrepreneur’s Guide to Building a Successful Business www.efmd.org\nExperience and advice from hundreds of small \nbusiness owners /operators in fourteen countries\nby Jonathan T. Scott\nThe Entrepreneur’s Guide to \nBuilding a Successful Business\nEverything you need to build your successful business:\n•  Finding a profitable business idea \n•  Choosing a location \n•  Writing a business plan \n•  Business model examples"
+  },
+  {
+    "sample_id": "m2-02",
+    "question": "What does the corpus say about patents?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 4,
+    "text": "90  Advice from the Pros\n91   16. Protecting Your Business with Copyrights, \nTrademarks, Patents, and UPC Codes\n91  Copyright"
+  },
+  {
+    "sample_id": "m2-03",
+    "question": "What does the corpus say about trademarks?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 4,
+    "text": "90  Advice from the Pros\n91   16. Protecting Your Business with Copyrights, \nTrademarks, Patents, and UPC Codes\n91  Copyright"
+  },
+  {
+    "sample_id": "m2-04",
+    "question": "What does the corpus say about copyright?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 1,
+    "text": "The Entrepreneur’s Guide to  \nBuilding a Successful Business\nBy Jonathan T Scott\nPublished by:\nEFMD\naisbl\nRue Gachard 88 – Box 3  \n1050 Brussels, Belgium\nT +32 (0)2 629 08 10\nF +32 (0)2 629 08 11\nE info@efmd.org\nwww.efmd.org \nEFMD is an international not-for-profit association (aisbl)\nCopyright 2017 by Jonathan T. Scott and EFMD. All rights reserved. The moral rights of the author have been asserted."
+  },
+  {
+    "sample_id": "m2-05",
+    "question": "中文：商业计划为什么重要？",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 0,
+    "text": "Design by www.jebensdesign.co.uk\nwith Great Advice from Seasoned Practitioners The Entrepreneur’s Guide to Building a Successful Business www.efmd.org\nExperience and advice from hundreds of small \nbusiness owners /operators in fourteen countries\nby Jonathan T. Scott\nThe Entrepreneur’s Guide to \nBuilding a Successful Business\nEverything you need to build your successful business:\n•  Finding a profitable business idea \n•  Choosing a location \n•  Writing a business plan \n•  Business model examples"
+  },
+  {
+    "sample_id": "m2-06",
+    "question": "What does the corpus say about writing a business plan?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 0,
+    "text": "Design by www.jebensdesign.co.uk\nwith Great Advice from Seasoned Practitioners The Entrepreneur’s Guide to Building a Successful Business www.efmd.org\nExperience and advice from hundreds of small \nbusiness owners /operators in fourteen countries\nby Jonathan T. Scott\nThe Entrepreneur’s Guide to \nBuilding a Successful Business\nEverything you need to build your successful business:\n•  Finding a profitable business idea \n•  Choosing a location \n•  Writing a business plan \n•  Business model examples"
+  },
+  {
+    "sample_id": "m2-07",
+    "question": "What does the corpus say about patents?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 4,
+    "text": "90  Advice from the Pros\n91   16. Protecting Your Business with Copyrights, \nTrademarks, Patents, and UPC Codes\n91  Copyright"
+  },
+  {
+    "sample_id": "m2-08",
+    "question": "What does the corpus say about trademarks?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 4,
+    "text": "90  Advice from the Pros\n91   16. Protecting Your Business with Copyrights, \nTrademarks, Patents, and UPC Codes\n91  Copyright"
+  },
+  {
+    "sample_id": "m2-09",
+    "question": "What does the corpus say about copyright?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 1,
+    "text": "The Entrepreneur’s Guide to  \nBuilding a Successful Business\nBy Jonathan T Scott\nPublished by:\nEFMD\naisbl\nRue Gachard 88 – Box 3  \n1050 Brussels, Belgium\nT +32 (0)2 629 08 10\nF +32 (0)2 629 08 11\nE info@efmd.org\nwww.efmd.org \nEFMD is an international not-for-profit association (aisbl)\nCopyright 2017 by Jonathan T. Scott and EFMD. All rights reserved. The moral rights of the author have been asserted."
+  },
+  {
+    "sample_id": "m2-10",
+    "question": "中文：商业计划为什么重要？",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 0,
+    "text": "Design by www.jebensdesign.co.uk\nwith Great Advice from Seasoned Practitioners The Entrepreneur’s Guide to Building a Successful Business www.efmd.org\nExperience and advice from hundreds of small \nbusiness owners /operators in fourteen countries\nby Jonathan T. Scott\nThe Entrepreneur’s Guide to \nBuilding a Successful Business\nEverything you need to build your successful business:\n•  Finding a profitable business idea \n•  Choosing a location \n•  Writing a business plan \n•  Business model examples"
+  },
+  {
+    "sample_id": "m2-11",
+    "question": "What does the corpus say about writing a business plan?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 0,
+    "text": "Design by www.jebensdesign.co.uk\nwith Great Advice from Seasoned Practitioners The Entrepreneur’s Guide to Building a Successful Business www.efmd.org\nExperience and advice from hundreds of small \nbusiness owners /operators in fourteen countries\nby Jonathan T. Scott\nThe Entrepreneur’s Guide to \nBuilding a Successful Business\nEverything you need to build your successful business:\n•  Finding a profitable business idea \n•  Choosing a location \n•  Writing a business plan \n•  Business model examples"
+  },
+  {
+    "sample_id": "m2-12",
+    "question": "What does the corpus say about patents?",
+    "ground_truth": "supported",
+    "retrieval_mode": "sqlite_fts_fallback",
+    "source": "law\\The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf",
+    "page": 4,
+    "text": "90  Advice from the Pros\n91   16. Protecting Your Business with Copyrights, \nTrademarks, Patents, and UPC Codes\n91  Copyright"
+  }
+]

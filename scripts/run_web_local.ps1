@@ -1,0 +1,9 @@
+param([switch]$DryRun)
+$ErrorActionPreference='Stop'; $root=Split-Path $PSScriptRoot -Parent; $runtime=Join-Path $root 'web\.runtime'; New-Item -ItemType Directory -Force $runtime | Out-Null
+function PortPid($port){(Get-NetTCPConnection -LocalPort $port -State Listen -ErrorAction SilentlyContinue | Select-Object -First 1 -ExpandProperty OwningProcess)}
+foreach($port in @(8100,5173)){ $owner=PortPid $port; if($owner){Write-Warning "Port $port already used by PID $owner; not starting or stopping it."} }
+$apiLog=Join-Path $runtime 'fastapi.log';$viteLog=Join-Path $runtime 'vite.log';$apiOut=Join-Path $runtime 'fastapi.out.log';$viteOut=Join-Path $runtime 'vite.out.log';$apiArgs='-m uvicorn web.backend.main:app --host 127.0.0.1 --port 8100';$viteArgs='run dev -- --host 127.0.0.1'
+if($DryRun){Write-Host "python $apiArgs";Write-Host "npm $viteArgs";exit 0}
+if(!(PortPid 8100)){ $p=Start-Process -FilePath 'C:\Python314\python.exe' -ArgumentList $apiArgs -WorkingDirectory $root -WindowStyle Hidden -RedirectStandardOutput $apiOut -RedirectStandardError $apiLog -PassThru; Set-Content (Join-Path $runtime 'fastapi.pid') $p.Id }
+if(!(PortPid 5173)){ $p=Start-Process -FilePath 'npm.cmd' -ArgumentList $viteArgs -WorkingDirectory (Join-Path $root 'web\frontend') -WindowStyle Hidden -RedirectStandardOutput $viteOut -RedirectStandardError $viteLog -PassThru; Set-Content (Join-Path $runtime 'vite.pid') $p.Id }
+Start-Sleep -Seconds 2; try {Invoke-WebRequest 'http://127.0.0.1:8100/api/health' -UseBasicParsing -TimeoutSec 5 | Out-Null;Write-Host 'FastAPI: http://127.0.0.1:8100'} catch {Write-Warning "FastAPI health failed; see $apiLog"}; try {Invoke-WebRequest 'http://127.0.0.1:5173' -UseBasicParsing -TimeoutSec 5 | Out-Null;Write-Host 'Vite: http://127.0.0.1:5173'} catch {Write-Warning "Vite probe failed; see $viteLog"}

@@ -1,0 +1,152 @@
+{
+  "stage": "P7",
+  "task_id": "P7-CONVERSATIONAL-UI-001",
+  "status": "ready_for_review",
+  "changed_files": [
+    "docs/AI_CHATBOT_REQUIREMENTS.md",
+    "docs/implementation_status.md",
+    "docs/implementation_status.json",
+    "docs/reports/M0.md",
+    "docs/eval/seed_questions.json",
+    "scripts/run_m0_baseline.py",
+    "docs/reports/M0-F01.md",
+    "core/__init__.py",
+    "core/business_plan.py",
+    "core/budget.py",
+    "core/html_renderer.py",
+    "scripts/run_m1_sample.py",
+    "tests/test_core.py",
+    "docs/reports/M1.md",
+    "core/retrieval.py",
+    "core/orchestrator.py",
+    "scripts/run_m2_eval.py",
+    "tests/test_retrieval.py",
+    "docs/eval/m2_samples.json",
+    "docs/eval/m2_scenarios.json",
+    "docs/reports/M2.md",
+    "scripts/run_m2_eval.py",
+    "core/pipeline.py",
+    "scripts/run_m3_pipeline.py",
+    "StartUp_Advisor/startup_web.py",
+    "docs/reports/M3.md",
+    "tests/test_pipeline.py"
+    ,"core/report_files.py"
+    ,"tests/test_report_files.py"
+    ,"core/storage.py"
+    ,"tests/test_storage.py"
+    ,"docs/reports/M3_PERSISTENCE.md"
+    ,"core/agent.py"
+    ,"tests/test_agent.py"
+    ,"docs/reports/M4.md"
+    ,"scripts/run_m4_eval.py"
+    ,"scripts/run_final_smoke.py"
+    ,"docs/STARTUP.md"
+    ,"docs/ARCHITECTURE.md"
+    ,"docs/ADR/001-scope-and-evidence.md"
+    ,"docs/reports/M5.md"
+    ,"web/backend/main.py"
+    ,"web/frontend/package.json"
+    ,"web/frontend/index.html"
+    ,"web/frontend/vite.config.js"
+    ,"web/frontend/src/main.jsx"
+    ,"web/frontend/src/style.css"
+    ,"docs/WEB_UI.md"
+    ,"docs/reports/P1.md"
+    ,"web/backend/test_main.py"
+    ,"docs/reports/P2.md"
+    ,"pypdf"
+    ,"python-docx"
+    ,"python-multipart"
+    ,"core/ollama_planner.py"
+    ,"scripts/run_m4_real_trace.py"
+    ,"tests/test_ollama_planner.py"
+  ],
+  "tests": [
+    {
+      "name": "Ollama tags endpoint",
+      "type": "real_model_connectivity",
+      "command": "Invoke-WebRequest http://127.0.0.1:11434/api/tags",
+      "exit_code": 0,
+      "result": "HTTP 200; qwen2.5:3b present"
+    },
+    {
+      "name": "Ollama chat probe",
+      "type": "real_model",
+      "command": "POST /api/chat model=qwen2.5:3b prompt=Reply only with LOCAL_MODEL_OK",
+      "exit_code": 0,
+      "result": "LOCAL_MODEL_OK; 4595 ms wall time"
+    },
+    {
+      "name": "Chainlit endpoint probe",
+      "type": "integration_liveness",
+      "command": "GET http://127.0.0.1:8000 and http://127.0.0.1:8001",
+      "exit_code": 0,
+      "result": "both HTTP 200"
+    },
+    {
+      "name": "Business-plan callback attachment test",
+      "type": "mock_callback",
+      "command": "mocked Chainlit callback test",
+      "exit_code": 0,
+      "result": "success message plus visible HTML/JSON attachment cards"
+    },
+    {
+      "name": "Production vector RAG runtime",
+      "type": "real_vector_rag",
+      "command": "E:\\year4\\AI chatbot\\.venv\\Scripts\\python.exe",
+      "exit_code": 1,
+      "result": "blocked before Python starts: pyvenv.cfg references unavailable Microsoft Store Python; direct Store execution denied"
+    },
+    {
+      "name": "M0-F01 lexical fallback: business plan",
+      "type": "real_fallback_rag",
+      "command": "C:\\Python314\\python.exe scripts\\run_m0_baseline.py --question ... --fts-query '\"business plan\"' --top-k 3",
+      "exit_code": 0,
+      "result": "3 Chroma chunks with source/page metadata and local qwen2.5:3b answer; see docs/reports/artifacts/m0-fts-20261027T163705-69baa9f3/result.json"
+    },
+    {
+      "name": "M0-F01 lexical fallback: patents and trademarks",
+      "type": "real_fallback_rag",
+      "command": "C:\\Python314\\python.exe scripts\\run_m0_baseline.py",
+      "exit_code": 0,
+      "result": "two additional source/page-grounded Ollama answers; see the 163724 and 163726 artifact directories"
+    },
+    {
+      "name": "M1 core boundary tests",
+      "type": "unit",
+      "command": "PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=E:\\year4\\AI chatbot C:\\Python314\\python.exe -m unittest discover",
+      "exit_code": 0,
+      "result": "4 tests passed"
+    },
+    {
+      "name": "M1 structured sample output",
+      "type": "integration_sample",
+      "command": "C:\\Python314\\python.exe scripts\\run_m1_sample.py",
+      "exit_code": 0,
+      "result": "unique run m1-b6a3ab32d936; JSON and HTML exist; no unescaped script tag"
+    }
+  ],
+  "artifacts": [
+    "docs/reports/M0.md",
+    "docs/eval/seed_questions.json",
+    "StartUp_Advisor/business_plan_20261023_230827.html",
+    "StartUp_Advisor/business_plan_20261023_230827.json"
+    ,"scripts/run_m0_baseline.py"
+    ,"docs/reports/M0-F01.md"
+    ,"docs/reports/artifacts/m0-fts-20261027T163705-69baa9f3/result.json"
+    ,"docs/reports/artifacts/m0-fts-20261027T163724-8b98e349/result.json"
+    ,"docs/reports/artifacts/m0-fts-20261027T163726-de41eb31/result.json"
+    ,"docs/reports/artifacts/m1-b6a3ab32d936/Business_Plan.json"
+    ,"docs/reports/artifacts/m1-b6a3ab32d936/Business_Plan.html"
+  ],
+  "blockers": [
+    "Sandbox cannot invoke the copied Microsoft Store Python 3.11 virtual environment.",
+    "User manually confirmed successful browser execution and real asynchronous Worker execution; automation did not independently reproduce either.",
+    "Production semantic vector RAG was not independently run because the copied .venv references unavailable Microsoft Store Python; rerun after repairing the runtime.",
+    "Automated browser and Worker reproduction was unavailable; manual user acceptance is recorded separately.",
+    "User manually confirmed chromadb and langchain_ollama import successfully inside .venv.",
+    "User manually exercised the RAG chain with a Hong Kong company-registration question and page citations; this is not a 30-question benchmark or ranking-metric acceptance."
+  ],
+  "next_recommendation": "Final review: keep default UI unchanged; repair the copied .venv runtime before any production semantic vector acceptance.",
+  "updated_at": "2026-10-29T16:00:00+08:00"
+}

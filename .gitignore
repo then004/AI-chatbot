@@ -1,0 +1,63 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.Python
+.pytest_cache/
+.mypy_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Node / frontend
+node_modules/
+web/frontend/node_modules/
+web/frontend/dist/
+npm-debug.log*
+
+# Runtime and personal data
+.runtime/
+web/.runtime/
+web/uploads/
+web/public_knowledge/
+web/*.db
+web/*.sqlite
+web/*.sqlite3
+*.db
+*.sqlite
+*.sqlite3
+
+# Knowledge stores and vector databases
+**/chroma/
+**/chroma_db/
+**/chroma.sqlite3
+**/*.bin
+
+# Generated reports and artifacts
+docs/reports/artifacts/
+docs/reports/*.html
+docs/reports/*.json
+**/Business_Plan.html
+**/Business_Plan.json
+
+# Logs and local exports
+*.log
+*.pid
+reports/
+artifacts/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+

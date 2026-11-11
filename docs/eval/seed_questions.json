@@ -1,0 +1,47 @@
+{
+  "dataset_version": "m0-seed-2026-10-23",
+  "label_status": "source-grounded seeds; answer/chunk labels require human review before metric use",
+  "corpus_root": "RAG_bot/law",
+  "questions": [
+    {
+      "id": "seed-01",
+      "split": "development",
+      "language": "en",
+      "question": "What is covered in Part 1 of the Hong Kong Companies Ordinance?",
+      "expected_source_filename": "Companies Ordinance Part 1.pdf",
+      "label_basis": "actual corpus filename; page/chunk not yet manually confirmed"
+    },
+    {
+      "id": "seed-02",
+      "split": "development",
+      "language": "en",
+      "question": "Which parts of the Companies Ordinance are in the current knowledge base?",
+      "expected_source_filenames": ["Companies Ordinance Part 1.pdf", "Companies Oridnance Part 2.pdf", "Companies Ordinance Part 3.pdf", "Companies Ordinance Part 4.pdf", "Companies Ordinance Part 5.pdf", "Companies Ordinance Part 6.pdf", "Companies Ordinance Part 7.pdf", "Companies Ordinance Part 8.pdf"],
+      "label_basis": "actual corpus filenames; multi-document coverage check"
+    },
+    {
+      "id": "seed-03",
+      "split": "development",
+      "language": "zh-CN",
+      "question": "知识库中有哪些与专利有关的香港法规资料？",
+      "expected_source_filename": "Patents Ordinance.pdf",
+      "label_basis": "actual corpus filename; page/chunk not yet manually confirmed"
+    },
+    {
+      "id": "seed-04",
+      "split": "development",
+      "language": "en",
+      "question": "What entrepreneurship guidance material is available for building a successful business?",
+      "expected_source_filenames": ["The Entrepreneurs Guide to Building a Successful Business.pdf", "The-Entrepreneurs-Guide-to-Building-a-Successful-Business-2017.pdf"],
+      "label_basis": "actual corpus filenames; duplicate/near-duplicate retrieval check"
+    },
+    {
+      "id": "seed-05",
+      "split": "development",
+      "language": "zh-CN",
+      "question": "这个知识库能否提供 2026 年香港 AI 法律咨询市场规模？如果不能，请明确说明资料不足。",
+      "expected_source_filenames": [],
+      "label_basis": "negative case: corpus inventory contains ordinances and entrepreneurship PDFs, not a dated 2026 AI legal-consulting market report"
+    }
+  ]
+}
